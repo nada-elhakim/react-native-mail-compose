@@ -20,6 +20,11 @@ class RNMailCompose: NSObject, MFMailComposeViewControllerDelegate {
       "name": "RNMailCompose",
     ]
   }
+
+    @objc
+    static func requiresMainQueueSetup() -> Bool {
+      return true
+    }
   
   @objc func canSendMail(_ resolve: RCTPromiseResolveBlock, reject: RCTPromiseRejectBlock) {
     return resolve(MFMailComposeViewController.canSendMail())
